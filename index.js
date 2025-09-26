@@ -4,7 +4,9 @@ var express = require("express")
 
 var connectToDatabase = require("./database/db")
 
-var router = require("./routes/book-routes")
+var cors = require("cors")
+
+var bookRoute = require("./routes/book-route")
 
 var app = express()
 
@@ -12,12 +14,12 @@ connectToDatabase()
 
 app.use(express.json())
 
-app.use("/api/book",router)
+app.use(cors())
 
-var PORT = process.env.PORT || 3333
+app.use("/api/books",bookRoute)
+
+var PORT = process.env.PORT || 5000
 
 app.listen(PORT,()=>{
-    console.log("server is running");
-    
+    console.log("The server is running");
 }) 
-
