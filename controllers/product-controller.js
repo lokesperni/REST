@@ -23,7 +23,7 @@ var addNewProduct = async(req,res)=>{
 }
 
 var updateNewProduct = async(req,res)=>{
-    var productId = req.params.id 
+    var productId = req.params.id     
     var productData = req.body
     var updatedproduct = await Books.findByIdAndUpdate(productId,productData)
     if(updatedproduct){
