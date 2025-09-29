@@ -8,6 +8,8 @@ var cors = require("cors")
 
 var bookRoute = require("./routes/book-route")
 
+var productRoute = require("./routes/product-route")
+
 var app = express()
 
 connectToDatabase()
@@ -16,6 +18,7 @@ app.use(express.json())
 app.use(cors())
 
 app.use("/api/books", bookRoute)
+app.use("/api/products",productRoute) 
 
 var PORT = process.env.PORT || 9393
 
@@ -23,3 +26,5 @@ app.listen(PORT, () => {
     console.log("The server is running");
 }) 
  
+require("dotenv").config()
+
