@@ -21,7 +21,7 @@ app.use("/api/books", bookRoute)
 
 app.use("/api/products", productRoute) 
 
-var PORT = process.env.PORT || 5000
+var PORT = process.env.PORT || 6363
 
 app.listen(PORT, () => {
     console.log("The server is running");
