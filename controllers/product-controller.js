@@ -1,4 +1,5 @@
 
+const products = require("../models/products")
 var Products = require("../models/products")
 
 var getAllproducts = async(req,res)=>{
@@ -25,7 +26,7 @@ var addNewProduct = async(req,res)=>{
 var updateNewProduct = async(req,res)=>{
     var productId = req.params.id     
     var productData = req.body
-    var updatedproduct = await Books.findByIdAndUpdate(productId,productData)
+    var updatedproduct = await products.findByIdAndUpdate(productId,productData)
     if(updatedproduct){
         res.status(200).json(updatedproduct)
     }else{
@@ -35,7 +36,7 @@ var updateNewProduct = async(req,res)=>{
 
 var deleteProduct = async(req,res)=>{
     var productId = req.params.id 
-    var deletedproduct = await Books.findByIdAndDelete(productId)
+    var deletedproduct = await products.findByIdAndDelete(productId)
     if(deletedproduct){
         res.status(200).json(deletedproduct)
     }else{

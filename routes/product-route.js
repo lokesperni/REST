@@ -5,13 +5,9 @@ var {getAllproducts,getSingleProduct,addNewProduct,updateNewProduct,deleteProduc
 var router = express.Router()
 
 router.get("/get",getAllproducts)
-
 router.get("/get/:id",getSingleProduct)
-
 router.post("/add",addNewProduct)
-
 router.put("/update/:id",updateNewProduct)
-
 router.delete("/delete/:id",deleteProduct)
 
-module.exports = router
+module.exports = router 
