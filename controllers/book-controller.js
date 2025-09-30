@@ -15,7 +15,7 @@ var addBook = async(req,res)=>{
     var formData = req.body
     var newBook = await Books.create(formData)
     if(newBook){
-        res.status(201).json(newBook)
+        res.status(200).json(newBook)
     }else{
         res.status(404).json({message : "cannot create book"})
     }
@@ -42,6 +42,4 @@ var deleteBook = async(req,res)=>{
     }
 }
 
-module.exports = {
-    getAllBooks,getSingleBook,addBook,updateBook,deleteBook
-} 
+module.exports = {getAllBooks, getSingleBook, addBook, updateBook, deleteBook} 

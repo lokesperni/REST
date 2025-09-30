@@ -1,30 +1,28 @@
-require("dotenv").config()
+require("dotenv").config();
 
-var express = require("express")
+var express = require("express");
 
-var connectToDatabase = require("./database/db")
+var connectToDatabase = require("./database/db");
 
-var cors = require("cors")
+var cors = require("cors");
 
-var bookRoute = require("./routes/book-route")
+var bookRoute = require("./routes/book-route");
 
-var productRoute = require("./routes/product-route")
+var productRoute = require("./routes/product-route");
 
-var app = express()
+var app = express();
 
-connectToDatabase()
+connectToDatabase();
 
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
 
-app.use("/api/books", bookRoute)
-app.use("/api/products",productRoute) 
+app.use("/api/books", bookRoute);
+app.use("/api/products", productRoute);
 
-var PORT = process.env.PORT || 9393
+var PORT = process.env.PORT || 9393;
 
 app.listen(PORT, () => {
-    console.log("The server is running");
-}) 
- 
-require("dotenv").config()
+    console.log("server is running");
+}); 
 

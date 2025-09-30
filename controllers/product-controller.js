@@ -15,7 +15,7 @@ var addNewProduct = async(req,res)=>{
     var productData = req.body
     var newProduct = await Products.create(productData)
     if(newProduct){
-        res.status(201).json(newProduct)
+        res.status(200).json(newProduct)
     }else{
         res.status(404).json({message : "cannot add product"})
     }
@@ -42,4 +42,4 @@ var deleteProduct = async(req,res)=>{
     }
 }
 
-module.exports = {getAllproducts,getSingleProduct,addNewProduct,updateNewProduct,deleteProduct} 
+module.exports = {getAllproducts, getSingleProduct, addNewProduct, updateNewProduct, deleteProduct} 
